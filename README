@@ -1,1 +1,33 @@
 My thesis project
+
+
+
+Having a list of games' ASINs:
+- from terminal: 
+      perl downloadAmazonReviews.pl com ASIN1 ASIN2 ASIN3...
+	    perl extractAmazonReviews.pl com amazonreviews/com/ASIN1 	amazonreviews/com/ASIN2 	amazonreviews/com/ASIN3...
+  obtaining file reviews.txt
+  
+  
+
+FOR USERS:
+- run UsersGenerator --> creates a list of user's ASINS from the reviews (not sorted)
+- from terminal:
+      <usersToSort.txt sort | uniq > sortedUsers.txt 
+  obtaining file sortedUsers.txt (list of sorted users without duplicates)
+  
+- run UsersAppender --> adds a numeric userID to each user's ASIN in the list
+
+
+
+FOR GAMES:
+- copy the list of ASINs and game names from the BrowseNode page
+- from terminal: 
+        <gamesToSort.txt sort | uniq > sortedGames.txt
+
+- run Appender --> adds unique numeric IDs to the list.
+
+
+
+GENERATING THE RATINGS FILE
+- run parserCSV --> creates file ratings.txt: each line represent a rating and is composed by userID, gameID, rating
